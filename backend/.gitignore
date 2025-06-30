@@ -1,0 +1,85 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+.pnpm-debug.log
+
+# Environnement
+.env
+.env.local
+.env.development
+.env.test
+.env.production
+
+# IDE
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Docker
+docker-compose.override.yml
+
+# Backend
+/dist/
+/coverage/
+*.pid
+*.seed
+*.log*
+logs/
+
+# MongoDB
+/data/db/
+*.ns
+*.0
+*.1
+
+# Frontend (React)
+/build/
+/.next/
+/out/
+.next/
+.next/cache/
+
+# Tests
+/junit.xml
+/nyc_output/
+
+# macOS
+.DS_Store
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~
+.fuse_hidden*
+.directory
+.trash-*
+.nfs*
+
+# Editor
+*.swp
+*.swo
+*~
+.~lock.*
+
+# Debug
+debug/
+*.log
+
+# Misc
+*.bak
+*.tmp
+*.patch
+*.diff
+*.sublime-*
+*.code-workspace
