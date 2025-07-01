@@ -43,4 +43,12 @@ exports.updateEvaluation = async (req, res) => {
   }
 };
 
-
+exports.deleteCompetence = async (req, res) => {
+  try {
+    const { id } = req.params;
+    await Competence.findByIdAndDelete(id);
+    res.json({ message: 'Deleted successfully' });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
