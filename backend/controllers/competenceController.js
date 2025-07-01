@@ -24,3 +24,23 @@ exports.createCompetence = async (req, res) => {
   }
 };
 
+exports.updateEvaluation = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { sousCompetences } = req.body;
+    const competence = await Competence.findByIdAndUpdate(
+      id,
+      { sousCompetences },
+      { new: true }
+    );
+    if (!competence) return res.status(404).json({ error: 'Not found' });
+    res.json({
+      ...competence.toObject(),
+      statut: calculerStatutGlobal(competence.sousCompetences),
+    });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
+
+
