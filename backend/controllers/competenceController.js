@@ -14,3 +14,13 @@ exports.getCompetences = async (req, res) => {
   }
 };
 
+exports.createCompetence = async (req, res) => {
+  try {
+    const competence = new Competence(req.body);
+    await competence.save();
+    res.status(201).json(competence);
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
+
