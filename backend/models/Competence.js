@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const SousCompetenceSchema = new mongoose.Schema({
   nom: { type: String, required: true },
   valide: { type: Boolean, default: false },
+  importante: { type: Boolean, default: false },
 });
 
 const CompetenceSchema = new mongoose.Schema(

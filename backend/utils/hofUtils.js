@@ -15,7 +15,13 @@ const calculateGlobalStatus = (sousCompetences = []) => {
     },
     { validees: 0, nonValidees: 0 }
   );
-  return validees >= nonValidees ? 'validée' : 'non validée';
+  
+  if (validees > nonValidees) return 'validée';
+  if (validees < nonValidees) return 'non validée';
+  
+  // Cas d'égalité : on regarde s'il existe une sous-compétence importante ET validée
+  const hasImportantValid = sousCompetences.some((sc) => sc.importante && sc.valide);
+  return hasImportantValid ? 'validée' : 'non validée';
 };
 
 /**
