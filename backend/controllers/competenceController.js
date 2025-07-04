@@ -52,3 +52,22 @@ exports.deleteCompetence = async (req, res) => {
     res.status(400).json({ error: err.message });
   }
 };
+
+exports.updateCompetence = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { code, nom, sousCompetences } = req.body;
+    const competence = await Competence.findByIdAndUpdate(
+      id,
+      { code, nom, sousCompetences },
+      { new: true, runValidators: true }
+    );
+    if (!competence) return res.status(404).json({ error: 'Not found' });
+    res.json({
+      ...competence.toObject(),
+      statut: calculerStatutGlobal(competence.sousCompetences),
+    });
+  } catch (err) {
+    res.status(400).json({ error: err.message });
+  }
+};
