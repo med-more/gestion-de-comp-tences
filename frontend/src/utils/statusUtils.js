@@ -10,7 +10,12 @@ export const calculateCompetenceStatus = (sousCompetences = []) => {
   const validees = sousCompetences.filter((sc) => sc.valide).length
   const nonValidees = sousCompetences.length - validees
 
-  return validees >= nonValidees ? "validee" : "non-validee"
+  if (validees > nonValidees) return "validee"
+  if (validees < nonValidees) return "non-validee"
+
+  // Cas d'égalité : on regarde s'il existe une sous-compétence importante ET validée
+  const hasImportantValid = sousCompetences.some((sc) => sc.importante && sc.valide)
+  return hasImportantValid ? "validee" : "non-validee"
 }
 
 /**

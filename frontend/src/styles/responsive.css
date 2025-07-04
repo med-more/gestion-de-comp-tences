@@ -1,0 +1,191 @@
+/* Responsive utilities and breakpoint-specific styles */
+
+/* Mobile First Approach */
+@media (max-width: 640px) {
+  /* Mobile specific styles */
+  .mobile-stack {
+    flex-direction: column !important;
+  }
+
+  .mobile-full-width {
+    width: 100% !important;
+  }
+
+  .mobile-text-center {
+    text-align: center !important;
+  }
+
+  .mobile-hidden {
+    display: none !important;
+  }
+
+  .mobile-text-sm {
+    font-size: 0.875rem !important;
+  }
+
+  .mobile-p-2 {
+    padding: 0.5rem !important;
+  }
+
+  .mobile-gap-2 {
+    gap: 0.5rem !important;
+  }
+}
+
+/* Tablet styles */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .tablet-grid-2 {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  .tablet-text-base {
+    font-size: 1rem !important;
+  }
+
+  .tablet-p-4 {
+    padding: 1rem !important;
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 1025px) {
+  .desktop-grid-3 {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  .desktop-grid-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+}
+
+/* Large desktop styles */
+@media (min-width: 1440px) {
+  .xl-grid-4 {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+
+  .xl-max-w-8xl {
+    max-width: 88rem !important;
+  }
+}
+
+/* Ultra-wide screens */
+@media (min-width: 1920px) {
+  .xxl-grid-5 {
+    grid-template-columns: repeat(5, 1fr) !important;
+  }
+
+  .xxl-max-w-9xl {
+    max-width: 96rem !important;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .touch-friendly {
+    min-height: 44px !important;
+    min-width: 44px !important;
+  }
+
+  .touch-button {
+    padding: 0.75rem 1rem !important;
+  }
+
+  .touch-input {
+    padding: 0.75rem !important;
+    font-size: 16px !important; /* Prevents zoom on iOS */
+  }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .high-dpi-border {
+    border-width: 0.5px !important;
+  }
+}
+
+/* Landscape orientation on mobile */
+@media (max-width: 896px) and (orientation: landscape) {
+  .landscape-mobile-compact {
+    padding-top: 0.5rem !important;
+    padding-bottom: 0.5rem !important;
+  }
+
+  .landscape-mobile-text-sm {
+    font-size: 0.875rem !important;
+  }
+}
+
+/* Print styles */
+@media print {
+  .print-hidden {
+    display: none !important;
+  }
+
+  .print-full-width {
+    width: 100% !important;
+  }
+
+  .print-no-shadow {
+    box-shadow: none !important;
+  }
+
+  .print-black-text {
+    color: black !important;
+  }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .motion-reduce {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-bg {
+    background-color: #1f2937 !important;
+  }
+
+  .dark-mode-text {
+    color: #f9fafb !important;
+  }
+}
+
+/* Container queries for modern browsers */
+@container (max-width: 400px) {
+  .container-sm-stack {
+    flex-direction: column !important;
+  }
+}
+
+@container (min-width: 600px) {
+  .container-md-grid {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+}
+
+/* Accessibility improvements */
+@media (prefers-contrast: high) {
+  .high-contrast-border {
+    border-width: 2px !important;
+    border-color: currentColor !important;
+  }
+}
+
+/* Focus visible for keyboard navigation */
+.focus-visible:focus-visible {
+  outline: 2px solid #8f0b13 !important;
+  outline-offset: 2px !important;
+}
+
+/* Safe area insets for mobile devices with notches */
+@supports (padding: max(0px)) {
+  .safe-area-inset {
+    padding-left: max(1rem, env(safe-area-inset-left)) !important;
+    padding-right: max(1rem, env(safe-area-inset-right)) !important;
+  }
+}
